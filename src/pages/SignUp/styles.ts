@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { shade } from "polished";
+import styled from 'styled-components';
+import { shade } from 'polished';
 
-import signUpBackgroundImg from "../../assets/sign-up-background.png";
+import signUpBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh; // utiliza tamanho total da pagina, e não do body ou filhos
@@ -37,7 +37,7 @@ export const Content = styled.div`
       transition: color 0.2s;
 
       &:hover {
-        color: ${shade(0.2, "#f4ede8")}
+        color: ${shade(0.2, '#f4ede8')}
       }
     }
   }
@@ -58,7 +58,7 @@ export const Content = styled.div`
         margin-right: 16px;
       }
       &:hover {
-        color: ${shade(0.2, "#f4ede8")}
+        color: ${shade(0.2, '#f4ede8')}
       }
   }
 `;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
@@ -23,7 +23,7 @@ export const Container = styled.div`
     color: #312e38;
 
     &::before {
-      content: ""; // necessário para invocar o ::before
+      content: ''; // necessário para invocar o ::before
       border-style: solid;
       border-color: #ff9000 transparent; // transparent para contornar o triângulo
       border-width: 8px 8px 0 8px; // triângulo

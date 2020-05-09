@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const toastTypeVariations = {
   info: css`
@@ -16,7 +16,7 @@ const toastTypeVariations = {
 };
 
 interface ToastProps {
-  type?: "success" | "error" | "info";
+  type?: 'success' | 'error' | 'info';
   hasDescription: boolean;
 }
 
@@ -42,7 +42,7 @@ export const Toast = styled.div<ToastProps>`
     margin-top: 8px;
   }
 
-  ${(props) => toastTypeVariations[props.type || "info"]}
+  ${(props) => toastTypeVariations[props.type || 'info']}
 
   > svg {
     margin: 4px 12px 0 0;

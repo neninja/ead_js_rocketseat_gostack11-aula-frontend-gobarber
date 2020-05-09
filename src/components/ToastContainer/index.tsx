@@ -1,7 +1,7 @@
-import React from "react";
-import { FiAlertCircle, FiXCircle } from "react-icons/fi";
+import React from 'react';
+import { FiAlertCircle, FiXCircle } from 'react-icons/fi';
 
-import { Container, Toast } from "./styles";
+import { Container, Toast } from './styles';
 
 const ToastContainer: React.FC = () => {
   return (

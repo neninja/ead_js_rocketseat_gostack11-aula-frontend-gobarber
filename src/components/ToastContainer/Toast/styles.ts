@@ -18,7 +18,7 @@ const toastTypeVariations = {
 
 interface ContainerProps {
   type?: 'success' | 'error' | 'info';
-  discriminated: number;
+  hasDescription: number;
 }
 
 export const Container = styled(animated.div)<ContainerProps>`
@@ -63,7 +63,7 @@ export const Container = styled(animated.div)<ContainerProps>`
   }
 
   ${(props) =>
-    !props.discriminated &&
+    !props.hasDescription &&
     css`
       align-items: center;
 

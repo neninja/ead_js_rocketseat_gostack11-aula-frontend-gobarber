@@ -1,13 +1,15 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
 import api from '../services/api';
 
+interface User {
+  id: string;
+  name: string;
+  avatar_url: string;
+}
+
 interface AuthState {
   token: string;
-
-  // Não precisa especificar como vem do back-end,
-  // pois a api pode mudar em algum momento.
-  // Somente o token é necessário
-  user: object;
+  user: User;
 }
 
 interface SignInCredentials {
@@ -16,7 +18,7 @@ interface SignInCredentials {
 }
 
 interface AuthContextData {
-  user: object;
+  user: User;
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
 }

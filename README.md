@@ -14,6 +14,11 @@ yarn
 
 # Sempre que quiser iniciar o projeto
 yarn start
+
+# testes
+yarn test
+#yarn test:coverage
+# coverage em coverage/lcov-report/index.html
 ```
 
 ## Padrão de commit

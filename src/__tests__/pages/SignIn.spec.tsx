@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, wait } from '@testing-library/react';
 import SignIn from '../../pages/SignIn';
 
 const mockedHistoryPush = jest.fn(); // função vazia
@@ -16,8 +16,17 @@ jest.mock('react-router-dom', () => {
   };
 });
 
+// mock de hook (funcionalidade existente)
+jest.mock('../../hooks/auth.tsx', () => {
+  return {
+    useAuth: () => ({
+      signIn: jest.fn(),
+    }),
+  };
+});
+
 describe('SignIn Page', () => {
-  it('should be able to sign in', () => {
+  it('should be able to sign in', async () => {
     // console.log() do <Component/>
     // const { debug } = render(<SignIn />);
     // debug();
@@ -32,8 +41,10 @@ describe('SignIn Page', () => {
     fireEvent.change(passwordField, { target: { value: '123456' } });
     fireEvent.click(buttonElement);
 
-    // espera que a função de push seja chamada com '/dashboard'
-    // cujo é a mesma coisa que esperar o redirecionamento
-    expect(mockedHistoryPush).toHaveBeenCalledWith('/dashboard');
+    await wait(() => {
+      // espera que a função de push seja chamada com '/dashboard'
+      // cujo é a mesma coisa que esperar o redirecionamento
+      expect(mockedHistoryPush).toHaveBeenCalledWith('/dashboard');
+    });
   });
 });
